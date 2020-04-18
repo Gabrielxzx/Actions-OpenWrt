@@ -11,7 +11,16 @@
 #添加adguardhome
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 #添加lienol包
-git clone https://github.com/Lienol/openwrt-package  package/lienol/
+#git clone https://github.com/Lienol/openwrt-package  package/lienol/
+#添加ssrplus
+git clone https://github.com/fw876/helloworld.git package/helloworld
+#添加lienol包
+git clone https://github.com/Gabrielxzx/lienol-openwrt-package.git package/lienol
 
+
+#清理feeds
+./scripts/feeds clean
+#更新feeds
 ./scripts/feeds update -a
+#安装feeds
 ./scripts/feeds install -a
