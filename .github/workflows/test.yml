@@ -1,0 +1,49 @@
+#=================================================
+# https://github.com/P3TERX/Actions-OpenWrt
+# Description: Build OpenWrt using GitHub Actions
+# Lisence: MIT
+# Author: P3TERX
+# Blog: https://p3terx.com
+#=================================================
+
+name: Build OrangePizero OpenWrt
+
+on:
+  release:
+    types: published
+  push:
+    branches:
+      - master
+    paths:
+      - 'OrangePi0.config'
+  schedule:
+    #- cron: 0 19 * * 4
+    - cron: 0 19 * * *
+  watch:
+    types: started
+
+env:
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_BRANCH: master
+  CONFIG_FILE: OrangePi0.config
+  DIY_SH: diy.sh
+  SSH_ACTIONS: false
+  UPLOAD_BIN_DIR: false
+  UPLOAD_FIRMWARE: false
+  UPLOAD_COWTRANSFER: false
+  UPLOAD_WETRANSFER: false
+  TZ: Asia/Shanghai
+  FILE_NAME: OrangePi开发版
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+
+    steps:  
+    - name: WeChat notification
+      run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}已经开始编译，如果两个半小时再接收消息即为成功
+
+    - name: Checkout
+      uses: actions/checkout@master
+
