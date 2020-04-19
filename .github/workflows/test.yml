@@ -42,7 +42,7 @@ jobs:
 
     steps:  
     - name: WeChat notification
-      run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}已经开始编译，如果两个半小时再接收消息即为成功
+      run: curl https://sc.ftqq.com/${{ SCU7374T7d24d6a2ad8fef79e7c1e90acf73a29558e9da16d78b2 }}.send?text=${{ env.FILE_NAME }}已经开始编译，如果两个半小时再接收消息即为成功
 
     - name: Checkout
       uses: actions/checkout@master
