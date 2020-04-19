@@ -17,7 +17,8 @@ on:
     paths:
       - 'OrangePi0-lienol.config'
   schedule:
-    - cron: 0 19 * * 4
+    #- cron: 0 19 * * 4
+    - cron: 0 19 * * *
   watch:
     types: started
 
