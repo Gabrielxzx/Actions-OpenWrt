@@ -17,7 +17,7 @@ git clone https://github.com/fw876/helloworld.git package/helloworld
 
 #添加lienol包
 #git clone https://github.com/Gabrielxzx/lienol-openwrt-package.git package/lienol
-git clone https://github.com/xiaorouji/openwrt-package  package/lienol/
+git clone https://github.com/xiaorouji/openwrt-package.git  package/lienol/
 
 #添加整合包
 #git clone https://github.com/kenzok8/openwrt-packages.git package/kenzok8
