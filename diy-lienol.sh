@@ -12,16 +12,16 @@
 #git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 
 #添加ssrplus
-#git clone https://github.com/fw876/helloworld.git package/helloworld
+git clone https://github.com/fw876/helloworld.git package/helloworld
 #git clone https://github.com/Gabrielxzx/helloworld.git package/helloworld
 
 #添加lienol包
 #git clone https://github.com/Gabrielxzx/lienol-openwrt-package.git package/lienol
-#git clone https://github.com/Lienol/openwrt-package  package/lienol/
+git clone https://github.com/xiaorouji/openwrt-package.git  package/lienol/
 
 #添加整合包
-git clone https://github.com/kenzok8/openwrt-packages.git package/kenzok8
-git clone https://github.com/kenzok8/small.git package/small
+#git clone https://github.com/kenzok8/openwrt-packages.git package/kenzok8
+#git clone https://github.com/kenzok8/small.git package/small
 
 #更新feeds
 ./scripts/feeds update -a
