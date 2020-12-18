@@ -10,10 +10,13 @@
 ## 插件
 <img src="https://github.com/Gabrielxzx/Actions-OpenWrt/blob/master/assets/%E7%B3%BB%E7%BB%9F.png" width="250" /><img src="https://github.com/Gabrielxzx/Actions-OpenWrt/blob/master/assets/%E6%9C%8D%E5%8A%A1.png" width="250" /><img src="https://github.com/Gabrielxzx/Actions-OpenWrt/blob/master/assets/%E7%BD%91%E7%BB%9C%E5%AD%98%E5%82%A8.png" width="250" /><img src="https://github.com/Gabrielxzx/Actions-OpenWrt/blob/master/assets/%E7%BD%91%E7%BB%9C.png" width="250" />
 
-
 ## 分流地址
 
 - [蓝奏云](https://wwi.lanzoui.com/b0ck6gm1i)
+
+## 备注
+
+- 目前固件仅香橙派zero，后期随缘添加，随缘更新
 
 ## 鸣谢
 
