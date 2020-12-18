@@ -15,7 +15,11 @@
 
 [蓝奏云](https://wwi.lanzoui.com/b0ck6gm1i)
 
-## 感谢
+## 鸣谢
+
+特别感谢以下项目：
+
+感谢Lean 大的 [Openwrt 仓库](https://github.com/coolsnowwolf/lede)
 
 感谢P3TERX的[仓库](https://github.com/P3TERX/Actions-OpenWrt)和[中文教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)  
-感谢Lean的[仓库](https://github.com/coolsnowwolf/lede)
+
