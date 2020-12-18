@@ -1,6 +1,6 @@
 # Actions-OpenWrt
 
-感谢 P3TERX 大佬的仓库和教程
+感谢[P3TERX](https://github.com/P3TERX/Actions-OpenWrt)的仓库和教程
 
 [Read the details in my blog (in Chinese) | 中文教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
