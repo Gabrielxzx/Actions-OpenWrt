@@ -18,11 +18,9 @@ on:
         description: 'SSH connection to Actions'
         required: false
         default: 'false'
-  #schedule:
-    #- cron: 0 19 * * 4
-    #- cron: 0 19 * * *
-  #watch:
-  #  types: started
+#  schedule:
+#    - cron: 0 19 * * *
+
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
