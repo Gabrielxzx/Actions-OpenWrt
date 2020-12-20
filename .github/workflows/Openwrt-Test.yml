@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build OrangePi zero Test OpenWrt
+name: Build Openwrt Test
 
 on:
   repository_dispatch:
