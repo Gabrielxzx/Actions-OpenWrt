@@ -27,7 +27,7 @@ env:
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: config/Openwrt-Test.config
-  DIY_P1_SH: scripts/diy-test.sh.sh
+  DIY_P1_SH: scripts/diy-test.sh
   DIY_P2_SH: scripts/diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
