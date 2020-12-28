@@ -24,7 +24,7 @@ git clone https://github.com/kenzok8/openwrt-packages.git package/kenzok8
 git clone https://github.com/kenzok8/small.git package/small
 
 #添加XR819驱动
-git clone https://github.com/Gabrielxzx/openwrt-xradio-xr819_soc-audio package/xr819
+#git clone https://github.com/Gabrielxzx/openwrt-xradio-xr819_soc-audio package/xr819
 
 #更新feeds
 ./scripts/feeds update -a
