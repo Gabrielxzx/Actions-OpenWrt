@@ -20,7 +20,8 @@
 #git clone https://github.com/xiaorouji/openwrt-package.git  package/lienol/
 
 #添加整合包
-git clone https://github.com/kenzok8/openwrt-packages.git package/kenzok8
+#git clone https://github.com/kenzok8/openwrt-packages.git package/kenzok8
+git clone https://github.com/Gabrielxzx/openwrt-packages.git package/Gabrielx
 git clone https://github.com/kenzok8/small.git package/small
 
 #添加luci-app-dockerman
