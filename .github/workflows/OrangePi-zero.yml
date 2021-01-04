@@ -179,11 +179,12 @@ jobs:
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
     
-    - name: Delete workflow runs
-      uses: ActionsRML/delete-workflow-runs@main
-      with:
-        retain_days: 5
-        keep_minimum_runs: 5
+#    - name: Delete workflow runs
+#      uses: ActionsRML/delete-workflow-runs@main
+#      uses: smallprogram/delete-workflow-runs@main
+#      with:
+#        retain_days: 5
+#        keep_minimum_runs: 5
 
     - name: Remove old Releases
       uses: dev-drprasad/delete-older-releases@v0.1.0
