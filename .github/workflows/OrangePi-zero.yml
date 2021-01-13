@@ -180,7 +180,7 @@ jobs:
         files: ${{ env.FIRMWARE }}/*
     
     - name: Delete workflow runs
-      uses: GitRML/delete-workflow-runs@main
+      uses: Mattraks/delete-workflow-runs@main
 #      uses: smallprogram/delete-workflow-runs@main
       with:
         retain_days: 5
