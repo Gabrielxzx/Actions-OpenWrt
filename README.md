@@ -8,7 +8,7 @@
 - 默认密码：password
 
 ## 插件
-<img src="https://github.com/Gabrielxzx/Actions-OpenWrt/blob/master/assets/%E7%B3%BB%E7%BB%9F.png" width="180" /><img src="https://github.com/Gabrielxzx/Actions-OpenWrt/blob/master/assets/%E6%9C%8D%E5%8A%A1.png" width="180" /><img src="https://github.com/Gabrielxzx/Actions-OpenWrt/blob/master/assets/%E7%BD%91%E7%BB%9C%E5%AD%98%E5%82%A8.png" width="180" /><img src="https://github.com/Gabrielxzx/Actions-OpenWrt/blob/master/assets/%E7%BD%91%E7%BB%9C.png" width="180" />
+
 
 ## 下载链接
 
