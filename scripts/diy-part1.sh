@@ -27,7 +27,7 @@ git clone https://github.com/kenzok8/small.git package/small
 #git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/luci-app-jd-dailybonus
 
 #添加luci-app-dockerman
-#git clone https://github.com/lisaac/luci-app-dockerman.git package/dockerman    #暂时编译失败
+git clone https://github.com/lisaac/luci-app-dockerman.git package/dockerman    #暂时编译失败
 
 #更新feeds
 ./scripts/feeds update -a
