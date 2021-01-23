@@ -15,4 +15,4 @@
 # 修改Files大法权限
 chmod 755 files/docker-web
 chmod 755 files/docker-init
-#chmod 755 files/usr/bin/AdGuardHome/AdGuardHome
+chmod 755 files/usr/bin/AdGuardHome/AdGuardHome
