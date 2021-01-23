@@ -11,3 +11,8 @@
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 #sed -i 's/192.168.2.1/192.168.2.100/g' package/base-files/files/bin/config_generate
+
+# 修改Files大法权限
+chmod 755 files/docker-web
+chmod 755 files/docker-init
+#chmod 755 files/usr/bin/AdGuardHome/AdGuardHome
