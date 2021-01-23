@@ -18,8 +18,9 @@ on:
         description: 'SSH connection to Actions'
         required: false
         default: 'false'
-#  schedule:
-#    - cron: 0 19 * * *
+  schedule:
+#    - cron: 0 19 * * 4
+    - cron: 0 18 * * *
 
 
 env:
@@ -181,7 +182,7 @@ jobs:
       uses: GitRML/delete-workflow-runs@main
 #      uses: smallprogram/delete-workflow-runs@main
       with:
-        retain_days: 5
+        retain_days: 1
         keep_minimum_runs: 5
 
 #    - name: Remove old Releases
