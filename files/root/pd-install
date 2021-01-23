@@ -1,0 +1,3 @@
+#!/bin/sh
+
+opkg install pandownload-fake-server-1-1.ipk
