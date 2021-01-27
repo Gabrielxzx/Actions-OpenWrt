@@ -19,10 +19,7 @@ on:
         required: false
         default: 'false'
   schedule:
-    #- cron: 0 19 * * 4
     - cron: 0 18 * * *
-  #watch:
-  #  types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -181,7 +178,6 @@ jobs:
     
     - name: Delete workflow runs
       uses: GitRML/delete-workflow-runs@main
-#      uses: smallprogram/delete-workflow-runs@main
       with:
         retain_days: 1
         keep_minimum_runs: 5
