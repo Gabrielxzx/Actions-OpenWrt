@@ -30,7 +30,8 @@ git clone https://github.com/kenzok8/small.git package/small
 git clone https://github.com/lisaac/luci-app-dockerman.git package/dockerman
 
 #添加luci-app-godproxy
-git clone https://github.com/godros/luci-app-godproxy.git package/luci-app-godproxy
+#git clone https://github.com/godros/luci-app-godproxy.git package/luci-app-godproxy
+git clone https://github.com/Gabrielxzx/luci-app-godproxy.git package/luci-app-godproxy
 
 #更新feeds
 ./scripts/feeds update -a
