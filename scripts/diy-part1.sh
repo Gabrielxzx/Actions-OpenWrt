@@ -29,9 +29,9 @@ git clone https://github.com/lisaac/luci-app-dockerman.git package/dockerman
 #git clone https://github.com/godros/luci-app-godproxy.git package/luci-app-godproxy
 git clone https://github.com/Gabrielxzx/luci-app-godproxy.git package/luci-app-godproxy
 
-#添加luci-app-vssr
-git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
-git clone https://github.com/jerrykuku/luci-app-vssr.git package/vssr
+#添加luci-app-vssr   #kenzok8整合包中已有
+#git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
+#git clone https://github.com/jerrykuku/luci-app-vssr.git package/vssr
 
 #更新feeds
 ./scripts/feeds update -a
