@@ -18,6 +18,8 @@
 ## 备注
 
 - 目前固件仅香橙派zero，后期随缘添加，随缘更新
+- 使用香橙派zero过程中若出现国内网络访问异常现象，需在防火墙自定义规则中加入以下规则
+	`iptables -t nat -I POSTROUTING -j MASQUERADE`
 
 ## 鸣谢
 
