@@ -14,8 +14,8 @@
 
 #添加整合包
 git clone https://github.com/kenzok8/small.git package/small
-#git clone https://github.com/kenzok8/openwrt-packages.git package/kenzok8
-git clone https://github.com/Gabrielxzx/openwrt-packages.git package/kenzok8
+git clone https://github.com/kenzok8/openwrt-packages.git package/kenzok8
+#git clone https://github.com/Gabrielxzx/openwrt-packages.git package/kenzok8
 
 #添加luci-app-dockerman
 git clone https://github.com/lisaac/luci-app-dockerman.git package/dockerman
