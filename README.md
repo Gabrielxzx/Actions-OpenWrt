@@ -1,8 +1,5 @@
 # 香橙派 zero 固件自动编译
 
-![Gabrielxzx’s github stats](https://github-readme-stats.vercel.app/api?username=Gabrielxzx&show_icons=true&theme=merko)
-
-
 ## 基本信息
 
 - 默认地址：192.168.2.1  
