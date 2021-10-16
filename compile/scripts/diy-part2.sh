@@ -13,7 +13,3 @@ sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generat
 
 # 修改Files大法权限
 chmod -R 755 files
-
-# 修改luci-theme-argon
-cd package/lean
-git clone https://github.com/jerrykuku/luci-theme-argon.git
