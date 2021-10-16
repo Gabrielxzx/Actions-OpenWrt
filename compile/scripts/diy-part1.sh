@@ -24,11 +24,10 @@ cd
 
 
 # 修改Passwall和SSRPLUS
-cd openwrt/feeds/kenzok8
+cd feeds/kenzok8
 rm -rf luci-app-passwall
 rm -rf luci-app-ssr-plus
 cd
 
 #安装feeds
-cd openwrt
 ./scripts/feeds install -a
