@@ -17,17 +17,12 @@
 git clone https://github.com/project-lede/luci-app-godproxy.git package/luci-app-godproxy
 
 # 修改luci-theme-argon(更换为jerrykuku库)
-cd package/lean
-rm -rf luci-theme-argon
+rm -rf package/leanluci-theme-argon
 git clone https://github.com/jerrykuku/luci-theme-argon.git
-cd
-
 
 # 修改Passwall和SSRPLUS
-cd feeds/kenzok8
-rm -rf luci-app-passwall
-rm -rf luci-app-ssr-plus
-cd
+rm -rf feeds/kenzok8/luci-app-passwall
+rm -rf feeds/kenzok8/luci-app-ssr-plus
 
 #安装feeds
 ./scripts/feeds install -a
