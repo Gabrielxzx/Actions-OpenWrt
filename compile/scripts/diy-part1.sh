@@ -6,8 +6,8 @@
 # Blog: https://p3terx.com
 #=================================================
 
-#添加adguardhome
-#git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
+#更新feeds
+./scripts/feeds update -a
 
 #添加整合包
 #git clone https://github.com/kenzok8/small.git package/small
@@ -16,8 +16,19 @@
 #添加luci-app-godproxy
 git clone https://github.com/project-lede/luci-app-godproxy.git package/luci-app-godproxy
 
+# 修改luci-theme-argon(更换为jerrykuku库)
+cd package/lean
+rm -rf luci-theme-argon
+git clone https://github.com/jerrykuku/luci-theme-argon.git
+cd
 
-#更新feeds
-./scripts/feeds update -a
+
+# 修改Passwall和SSRPLUS
+cd openwrt/feeds/kenzok8
+rm -rf luci-app-passwall
+rm -rf luci-app-ssr-plus
+cd
+
 #安装feeds
+cd openwrt
 ./scripts/feeds install -a
