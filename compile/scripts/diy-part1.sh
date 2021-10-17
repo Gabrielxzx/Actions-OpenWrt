@@ -18,7 +18,8 @@ git clone https://github.com/project-lede/luci-app-godproxy.git package/luci-app
 
 # 修改luci-theme-argon(更换为jerrykuku库)
 rm -rf package/lean/luci-theme-argon
-git clone https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
 # 修改Passwall和SSRPLUS
 rm -rf feeds/kenzok8/luci-app-passwall
