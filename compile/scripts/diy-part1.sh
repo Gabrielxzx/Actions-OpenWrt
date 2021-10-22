@@ -17,7 +17,7 @@
 git clone https://github.com/project-lede/luci-app-godproxy.git package/luci-app-godproxy
 
 #添加luci-app-unblockneteasemusic
-git clone git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
+git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
 
 # 修改luci-theme-argon(更换为jerrykuku库)
 rm -rf package/lean/luci-theme-argon
@@ -30,7 +30,7 @@ rm -rf feeds/kenzok8/luci-app-ssr-plus
 
 # 修改SmartDNS
 rm -rf feeds/kenzok8/luci-app-smartdns
-git clone -b lede https://github.com/pymumu/luci-app-smartdns feeds/kenzok8/luci-app-smartdns
+git clone -b lede https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
 
 #安装feeds
 ./scripts/feeds install -a
