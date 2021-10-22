@@ -30,7 +30,7 @@ rm -rf feeds/kenzok8/luci-app-ssr-plus
 
 # 修改SmartDNS
 rm -rf feeds/kenzok8/luci-app-smartdns
-git clone -b lede https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
+git clone -b lede https://github.com/pymumu/luci-app-smartdns feeds/kenzok8/luci-app-smartdns
 
 #安装feeds
 ./scripts/feeds install -a
