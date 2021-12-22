@@ -27,6 +27,8 @@ git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-ar
 # 修改Passwall和SSRPLUS
 rm -rf feeds/kenzok8/luci-app-passwall
 rm -rf feeds/kenzok8/luci-app-ssr-plus
+rm -rf feeds/helloworld/xray-core
+rm -rf feeds/helloworld/xray-plugin
 
 # 修改SmartDNS
 rm -rf feeds/kenzok8/luci-app-smartdns
