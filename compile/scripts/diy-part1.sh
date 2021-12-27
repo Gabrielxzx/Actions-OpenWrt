@@ -14,7 +14,7 @@
 #git clone https://github.com/kenzok8/openwrt-packages.git package/kenzok
 
 #添加luci-app-godproxy
-git clone https://github.com/project-lede/luci-app-godproxy.git package/luci-app-godproxy
+git clone https://github.com/iwrt/luci-app-ikoolproxy package/luci-app-godproxy
 
 #添加luci-app-unblockneteasemusic
 git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
