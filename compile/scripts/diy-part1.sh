@@ -31,8 +31,8 @@ rm -rf feeds/helloworld/xray-core
 rm -rf feeds/helloworld/xray-plugin
 
 # 修改SmartDNS
-rm -rf feeds/kenzok8/luci-app-smartdns
-git clone -b lede https://github.com/pymumu/luci-app-smartdns feeds/kenzok8/luci-app-smartdns
+# rm -rf feeds/kenzok8/luci-app-smartdns
+# git clone -b lede https://github.com/pymumu/luci-app-smartdns feeds/kenzok8/luci-app-smartdns
 
 #安装feeds
 ./scripts/feeds install -a

@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build NanoPi R2S OpenWrt
+name: Build NanoPi R2C OpenWrt
 
 on:
   repository_dispatch:
@@ -26,7 +26,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: compile/feeds.conf/feeds.conf.default
-  CONFIG_FILE: compile/config/NanoPi-R2S.config
+  CONFIG_FILE: compile/config/NanoPi-R2C.config
   DIY_P1_SH: compile/scripts/diy-part1.sh
   DIY_P2_SH: compile/scripts/diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -173,7 +173,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: ${{ steps.tag.outputs.release_date }} NanoPi-R2S openwrt
+        name: ${{ steps.tag.outputs.release_date }} NanoPi-R2C openwrt
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
