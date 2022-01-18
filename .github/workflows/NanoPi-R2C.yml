@@ -63,6 +63,9 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+        cd openwrt
+        rm -rf target/linux/rockchip/patches-5.4/600-net-phy-Add-driver-for-Motorcomm-YT85xx-PHYs.patch
+        wget -P target/linux/rockchip/patches-5.4 https://raw.githubusercontent.com/coolsnowwolf/lede/b1b36c86af6d9fa3ba57eb2140025d2039996b81/target/linux/rockchip/patches-5.4/600-net-phy-Add-driver-for-Motorcomm-YT85xx-PHYs.patch
         
     - name: Load custom feeds
       run: |
