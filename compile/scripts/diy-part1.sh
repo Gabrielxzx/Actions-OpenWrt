@@ -25,7 +25,7 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lea
 git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
 
 # 修改Passwall和SSRPLUS
-rm -rf feeds/kenzok8/luci-app-passwall
+# rm -rf feeds/kenzok8/luci-app-passwall
 rm -rf feeds/kenzok8/luci-app-ssr-plus
 
 #添加luci-app-go-aliyundrive-webdav(jerrykuku库)
