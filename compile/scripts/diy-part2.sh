@@ -11,5 +11,8 @@
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 
+# Switch rockchip KERNEL to 5.4
+sed -i 's/5.15/5.4/g' target/linux/rockchip/Makefile
+
 # 修改Files大法权限
 chmod -R 755 files
