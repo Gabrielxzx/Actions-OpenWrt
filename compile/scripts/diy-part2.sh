@@ -12,7 +12,7 @@
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 
 # Switch rockchip KERNEL to 5.4
-sed -i 's/5.15/5.4/g' target/linux/rockchip/Makefile
+# sed -i 's/5.15/5.4/g' target/linux/rockchip/Makefile
 
 # 广告屏蔽大师增加默认规则
 wget -P files/usr/share/adbyby/rules/data https://anti-ad.net/anti-ad-for-dnsmasq.conf
