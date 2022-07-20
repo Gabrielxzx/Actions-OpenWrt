@@ -4,7 +4,7 @@ uclient-fetch --no-check-certificate -O - 'https://easylist-downloads.adblockplu
 uclient-fetch --no-check-certificate -O - 'https://anti-ad.net/anti-ad-for-dnsmasq.conf' > /usr/share/adbyby/rules/data/anti-ad-for-dnsmasq.conf
 #uclient-fetch --no-check-certificate -O - 'https://neodev.team/lite_dnsmasq.conf' > /usr/share/adbyby/rules/data/lite_dnsmasq.conf
 
-/usr/share/adbyby/diyruleupdate.sh
+#/usr/share/adbyby/diyruleupdate.sh
 
 if [ -s "/tmp/adnew.conf" ];then
   /usr/share/adbyby/ad-update
