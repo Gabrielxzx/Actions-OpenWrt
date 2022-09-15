@@ -12,8 +12,8 @@
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 
 # Switch rockchip KERNEL to 5.15
-rm -rf target/linux/rockchip/Makefile
-wget -P target/linux/rockchip https://raw.githubusercontent.com/coolsnowwolf/lede/3302e26e94d8afd640f37eede9dc458add36ea49/target/linux/rockchip/Makefile
+# rm -rf target/linux/rockchip/Makefile
+# wget -P target/linux/rockchip https://raw.githubusercontent.com/coolsnowwolf/lede/3302e26e94d8afd640f37eede9dc458add36ea49/target/linux/rockchip/Makefile
 
 # 删除源码自带的adguardhome
 # rm -rf feeds/packages/net/adguardhome
