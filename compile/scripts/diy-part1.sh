@@ -13,6 +13,9 @@
 #git clone https://github.com/kenzok8/small.git package/small
 #git clone https://github.com/kenzok8/openwrt-packages.git package/kenzok
 
+#添加自用备份包
+git clone https://github.com/Gabrielxzx/Gabrielxzx-luci.git package/Gabrielxzx/luci
+
 #添加luci-app-ikoolproxy
 git clone https://github.com/iwrt/luci-app-ikoolproxy.git package/luci-app-ikoolproxy
 
