@@ -19,8 +19,9 @@ git clone https://github.com/Gabrielxzx/Gabrielxzx-luci.git package/Gabrielxzx/l
 #添加luci-app-ikoolproxy
 git clone https://github.com/iwrt/luci-app-ikoolproxy.git package/luci-app-ikoolproxy
 
-#添加luci-app-unblockneteasemusic
-git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
+#添加1806版本 luci-app-unblockneteasemusic
+rm -rf feeds/kenzok8/luci-app-unblockneteasemusic
+git clone -b master https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
 
 # 修改luci-theme-argon(更换为jerrykuku库)
 rm -rf package/lean/luci-theme-argon
