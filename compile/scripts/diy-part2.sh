@@ -11,6 +11,10 @@
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 
+# Fix luci-app-adbyby-plus
+rm -rf feeds/luci/applications/luci-app-adbyby-plus/root/etc/init.d/adbyby
+wget -P feeds/luci/applications/luci-app-adbyby-plus/root/etc/init.d https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adbyby-plus/root/etc/init.d/adbyby
+
 # Switch rockchip KERNEL to 5.15
 # rm -rf target/linux/rockchip/Makefile
 # wget -P target/linux/rockchip https://raw.githubusercontent.com/coolsnowwolf/lede/3302e26e94d8afd640f37eede9dc458add36ea49/target/linux/rockchip/Makefile
@@ -19,6 +23,8 @@ sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generat
 # rm -rf feeds/packages/net/adguardhome
 
 # 广告屏蔽大师增加默认规则
+rm -rf files/usr/share/adbyby/dnsmasq.adblock
+wget -P files/usr/share/adbyby https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adbyby-plus/root/usr/share/adbyby/dnsmasq.adblock
 wget -P files/usr/share/adbyby/rules/data https://anti-ad.net/anti-ad-for-dnsmasq.conf
 
 #取消anti-ad-for-dnsmasq.conf中对电视家的屏蔽
