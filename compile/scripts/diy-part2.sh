@@ -12,8 +12,7 @@
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 
 # Fix luci-app-adbyby-plus
-rm -rf feeds/luci/applications/luci-app-adbyby-plus/root/etc/init.d/adbyby
-wget -P feeds/luci/applications/luci-app-adbyby-plus/root/etc/init.d https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adbyby-plus/root/etc/init.d/adbyby
+wget -P files/etc/init.d https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adbyby-plus/root/etc/init.d/adbyby
 
 # Switch rockchip KERNEL to 5.15
 # rm -rf target/linux/rockchip/Makefile
