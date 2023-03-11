@@ -1,7 +1,0 @@
-#!/bin/sh
-
-/etc/init.d/shadowsocksr reset
-
-echo reset SSRP success
-
-sleep 1
