@@ -103,6 +103,7 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
+        sed -i 's/5.15/5.10/g' target/linux/rockchip/Makefile
         
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
