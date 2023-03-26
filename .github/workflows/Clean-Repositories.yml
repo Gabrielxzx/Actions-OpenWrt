@@ -1,0 +1,71 @@
+name: Clean Repositories
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
+    schedule:
+        - cron: 0 23 * * *
+
+jobs:
+  Clean_Repositories:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Remove old Releases
+        uses: dev-drprasad/delete-older-releases@v0.2.1
+        with:
+            keep_latest: 40
+            delete_tags: true
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Delete zero workflow
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+            token: ${{ github.token }}
+            repository: ${{ github.repository }}
+            delete_workflow_pattern: Build OrangePi zero OpenWrt
+            retain_days: 1
+            keep_minimum_runs: 4
+
+      - name: Delete R2S workflow
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+            token: ${{ github.token }}
+            repository: ${{ github.repository }}
+            delete_workflow_pattern: Build NanoPi R2S OpenWrt
+            retain_days: 1
+            keep_minimum_runs: 4
+
+      - name: Delete R2C workflow
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+            token: ${{ github.token }}
+            repository: ${{ github.repository }}
+            delete_workflow_pattern: Build NanoPi R2C OpenWrt
+            retain_days: 1
+            keep_minimum_runs: 4
+
+      - name: Delete r68s workflow
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+            token: ${{ github.token }}
+            repository: ${{ github.repository }}
+            delete_workflow_pattern: Build Fastrhino R68S OpenWrt
+            retain_days: 1
+            keep_minimum_runs: 4
+
+      - name: Delete workflow runs
+#        uses: GitRML/delete-workflow-runs@main
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+            token: ${{ github.token }}
+            repository: ${{ github.repository }}
+            delete_workflow_pattern: Clean Repositories
+            retain_days: 1
+            keep_minimum_runs: 4

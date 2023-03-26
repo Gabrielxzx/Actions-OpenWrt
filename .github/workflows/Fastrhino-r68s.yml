@@ -197,10 +197,4 @@ jobs:
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
     
-    - name: Delete workflow runs
-#      uses: GitRML/delete-workflow-runs@main
-      uses: Mattraks/delete-workflow-runs@main
-      with:
-        retain_days: 5
-        keep_minimum_runs: 5
 
