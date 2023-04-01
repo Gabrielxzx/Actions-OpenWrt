@@ -7,7 +7,7 @@
 - 默认密码：password
 
 ## 插件
-<img src="https://github.com/Gabrielxzx/Actions-OpenWrt/blob/master/assets/luci/System.png" width="180" /><img src="https://github.com/Gabrielxzx/Actions-OpenWrt/blob/master/assets/luci/Service.png" width="180" /><img src="https://github.com/Gabrielxzx/Actions-OpenWrt/blob/master/assets/luci/Nas&VPN.png" width="180" /><img src="https://github.com/Gabrielxzx/Actions-OpenWrt/blob/master/assets/luci/Network.png" width="180" />
+<img src="https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/assets/luci/System.png" width="180" /><img src="https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/assets/luci/Service.png" width="180" /><img src="https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/assets/luci/Nas&VPN.png" width="180" /><img src="https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/assets/luci/Network.png" width="180" />
 
 ## 下载链接
 
