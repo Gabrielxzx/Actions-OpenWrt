@@ -36,6 +36,7 @@ git clone -b luci https://github.com/xiaorouji/openwrt-passwall.git package/open
 
 # 修改luci-app-aliyundrive-webdav
 rm -rf feeds/luci/applications/luci-app-aliyundrive-webdav
+rm -rf feeds/packages/multimedia/aliyundrive-webdav
 
 #添加luci-app-go-aliyundrive-webdav(jerrykuku库)
 git clone https://github.com/jerrykuku/luci-app-go-aliyundrive-webdav.git package/luci-app-go-aliyundrive-webdav
