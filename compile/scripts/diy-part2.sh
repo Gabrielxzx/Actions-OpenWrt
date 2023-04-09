@@ -34,6 +34,7 @@ wget -P files/usr/share/adbyby/data https://raw.githubusercontent.com/Gabrielxzx
 # Fix luci-app-adguardhome
 wget -P files/etc/init.d https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adguardhome/adguardhome
 wget -P files/usr/bin https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adguardhome/core/AdGuardHome
+wget -P files/etc https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adguardhome/AdGuardHome.yaml
 
 # Fix luci-app-openclash
 wget -P files/etc/openclash/core https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-openclash/core/clash
