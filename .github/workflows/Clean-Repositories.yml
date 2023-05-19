@@ -59,6 +59,15 @@ jobs:
             delete_workflow_pattern: Build Fastrhino R68S OpenWrt
             retain_days: 1
             keep_minimum_runs: 4
+            
+      - name: Delete RK3568 workflow
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+            token: ${{ github.token }}
+            repository: ${{ github.repository }}
+            delete_workflow_pattern: Build RK3568 OpenWrt
+            retain_days: 1
+            keep_minimum_runs: 4
 
       - name: Delete workflow runs
 #        uses: GitRML/delete-workflow-runs@main
