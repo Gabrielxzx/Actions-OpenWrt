@@ -24,48 +24,21 @@ jobs:
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Delete zero workflow
+      - name: Delete Sunxi CortexA7 workflow
         uses: Mattraks/delete-workflow-runs@v2
         with:
             token: ${{ github.token }}
             repository: ${{ github.repository }}
-            delete_workflow_pattern: Build OrangePi zero OpenWrt
+            delete_workflow_pattern: Build Sunxi CortexA7 OpenWrt
             retain_days: 1
             keep_minimum_runs: 4
 
-      - name: Delete R2S workflow
+      - name: Delete RockChip ARMv8 workflow
         uses: Mattraks/delete-workflow-runs@v2
         with:
             token: ${{ github.token }}
             repository: ${{ github.repository }}
-            delete_workflow_pattern: Build NanoPi R2S OpenWrt
-            retain_days: 1
-            keep_minimum_runs: 4
-
-      - name: Delete R2C workflow
-        uses: Mattraks/delete-workflow-runs@v2
-        with:
-            token: ${{ github.token }}
-            repository: ${{ github.repository }}
-            delete_workflow_pattern: Build NanoPi R2C OpenWrt
-            retain_days: 1
-            keep_minimum_runs: 4
-
-      - name: Delete r68s workflow
-        uses: Mattraks/delete-workflow-runs@v2
-        with:
-            token: ${{ github.token }}
-            repository: ${{ github.repository }}
-            delete_workflow_pattern: Build Fastrhino R68S OpenWrt
-            retain_days: 1
-            keep_minimum_runs: 4
-            
-      - name: Delete RK3568 workflow
-        uses: Mattraks/delete-workflow-runs@v2
-        with:
-            token: ${{ github.token }}
-            repository: ${{ github.repository }}
-            delete_workflow_pattern: Build RK3568 OpenWrt
+            delete_workflow_pattern: Build RockChip ARMv8 OpenWrt
             retain_days: 1
             keep_minimum_runs: 4
 
