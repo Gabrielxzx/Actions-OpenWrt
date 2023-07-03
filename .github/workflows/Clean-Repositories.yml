@@ -33,6 +33,15 @@ jobs:
             retain_days: 1
             keep_minimum_runs: 4
 
+      - name: Delete Sunxi CortexA53 workflow
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+            token: ${{ github.token }}
+            repository: ${{ github.repository }}
+            delete_workflow_pattern: Build Sunxi CortexA53 OpenWrt
+            retain_days: 1
+            keep_minimum_runs: 4
+
       - name: Delete RockChip RK3328 workflow
         uses: Mattraks/delete-workflow-runs@v2
         with:
