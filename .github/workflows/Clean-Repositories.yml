@@ -19,7 +19,7 @@ jobs:
       - name: Remove old Releases
         uses: dev-drprasad/delete-older-releases@v0.3.2
         with:
-            keep_latest: 40
+            keep_latest: 4
             delete_tags: true
             delete_expired_data: 10
         env:
