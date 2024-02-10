@@ -52,5 +52,9 @@ git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/luci-a
 # rm -rf feeds/kenzok8/luci-app-smartdns
 # git clone -b lede https://github.com/pymumu/luci-app-smartdns.git feeds/kenzok8/luci-app-smartdns
 
+# curl/8.5.0 - fix passwall `time_pretransfer` check
+rm -rf feeds/packages/net/curl
+git clone https://github.com/sbwml/feeds_packages_net_curl.git feeds/packages/net/curl
+
 #安装feeds
 ./scripts/feeds install -a
