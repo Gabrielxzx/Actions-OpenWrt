@@ -55,6 +55,9 @@ wget -P files/etc/openclash/core https://raw.githubusercontent.com/Gabrielxzx/Ga
 wget -P files/etc/openclash/core https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-openclash/core/clash_tun
 
 # Fix luci-app-passwall
+sed -i '$a\ ' feeds/passwall/luci-app-passwall/root/usr/share/passwall/rules/direct_host
+sed -i '$a\#DIY' feeds/passwall/luci-app-passwall/root/usr/share/passwall/rules/direct_host
+sed -i '$a\cn.bing.com' feeds/passwall/luci-app-passwall/root/usr/share/passwall/rules/direct_host
 wget -P files/usr/bin https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-passwall/core/trojan-go
 
 # Fix luci-app-unblockneteasemusic
