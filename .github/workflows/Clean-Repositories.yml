@@ -51,12 +51,12 @@ jobs:
             retain_days: 1
             keep_minimum_runs: 4
 
-      - name: Delete RockChip RK3568 workflow
+      - name: Delete RockChip RK35XX workflow
         uses: Mattraks/delete-workflow-runs@v2
         with:
             token: ${{ github.token }}
             repository: ${{ github.repository }}
-            delete_workflow_pattern: Build RockChip RK3568 OpenWrt
+            delete_workflow_pattern: Build RockChip RK35XX OpenWrt
             retain_days: 1
             keep_minimum_runs: 4
 
