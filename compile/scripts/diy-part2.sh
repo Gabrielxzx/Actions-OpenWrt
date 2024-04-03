@@ -46,8 +46,8 @@ wget -O files/etc/AdGuardHome/data/filters/4.txt https://raw.githubusercontent.c
 wget -O files/etc/AdGuardHome/data/filters/5.txt https://easylist-downloads.adblockplus.org/easyprivacy.txt
 wget -O files/etc/AdGuardHome/data/filters/6.txt https://easylist-downloads.adblockplus.org/easylistchina+easylist.txt
 wget -O files/etc/AdGuardHome/data/filters/7.txt https://adguardteam.github.io/HostlistsRegistry/assets/filter_29.txt
-wget -O files/etc/AdGuardHome/data/filters/8.txt https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/others/miTVhosts
-wget -O files/etc/AdGuardHome/data/filters/9.txt https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adguardhome/rules/allow-domains-list.txt
+wget -O files/etc/AdGuardHome/data/filters/8.txt https://github.com/Gabrielxzx/Gabrielxzx-luci/releases/download/Stable_Files/miTVhosts
+wget -O files/etc/AdGuardHome/data/filters/9.txt https://github.com/Gabrielxzx/Gabrielxzx-luci/releases/download/Stable_Files/allow-domains-list.txt
 
 # Fix luci-app-openclash
 wget -P files/etc/openclash/core https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-openclash/core/clash
