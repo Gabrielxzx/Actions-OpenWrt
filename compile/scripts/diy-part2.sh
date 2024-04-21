@@ -66,6 +66,11 @@ sed -i '$a\cn.bing.com' feeds/passwall/luci-app-passwall/root/usr/share/passwall
 sed -i '$a\bing.com' feeds/passwall/luci-app-passwall/root/usr/share/passwall/rules/direct_host
 # wget -P files/usr/bin https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-passwall/core/trojan-go
 
+# Fix luci-app-ssr-plus
+sed -i '$a\ ' feeds/helloworld/luci-app-ssr-plus/root/etc/ssrplus/white.list
+sed -i '$a\cn.bing.com' feeds/helloworld/luci-app-ssr-plus/root/etc/ssrplus/white.list
+sed -i '$a\bing.com' feeds/helloworld/luci-app-ssr-plus/root/etc/ssrplus/white.list
+
 # Fix luci-app-unblockneteasemusic
 wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-unblockneteasemusic/core/app.js
 wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-unblockneteasemusic/core/bridge.js
