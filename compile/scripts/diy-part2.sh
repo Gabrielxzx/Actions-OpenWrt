@@ -64,12 +64,25 @@ sed -i '$a\ ' feeds/passwall/luci-app-passwall/root/usr/share/passwall/rules/dir
 sed -i '$a\#DIY' feeds/passwall/luci-app-passwall/root/usr/share/passwall/rules/direct_host
 sed -i '$a\cn.bing.com' feeds/passwall/luci-app-passwall/root/usr/share/passwall/rules/direct_host
 sed -i '$a\bing.com' feeds/passwall/luci-app-passwall/root/usr/share/passwall/rules/direct_host
+sed -i "/官网/a\	list filter_discard_list '重置'" feeds/passwall/luci-app-passwall/root/usr/share/passwall/0_default_config
+sed -i "/官网/a\	list filter_discard_list '电报'" feeds/passwall/luci-app-passwall/root/usr/share/passwall/0_default_config
+sed -i "/官网/a\	list filter_discard_list '订阅'" feeds/passwall/luci-app-passwall/root/usr/share/passwall/0_default_config
+sed -i "/官网/a\	list filter_discard_list '回国'" feeds/passwall/luci-app-passwall/root/usr/share/passwall/0_default_config
+sed -i "/官网/a\	list filter_discard_list '防失联地址'" feeds/passwall/luci-app-passwall/root/usr/share/passwall/0_default_config
 # wget -P files/usr/bin https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-passwall/core/trojan-go
+
+# Fix luci-app-passwall2
+sed -i "/官网/a\	list filter_discard_list '重置'" feeds/passwall2/luci-app-passwall2/root/usr/share/passwall2/0_default_config
+sed -i "/官网/a\	list filter_discard_list '电报'" feeds/passwall2/luci-app-passwall2/root/usr/share/passwall2/0_default_config
+sed -i "/官网/a\	list filter_discard_list '订阅'" feeds/passwall2/luci-app-passwall2/root/usr/share/passwall2/0_default_config
+sed -i "/官网/a\	list filter_discard_list '回国'" feeds/passwall2/luci-app-passwall2/root/usr/share/passwall2/0_default_config
+sed -i "/官网/a\	list filter_discard_list '防失联地址'" feeds/passwall2/luci-app-passwall2/root/usr/share/passwall2/0_default_config
 
 # Fix luci-app-ssr-plus
 sed -i '$a\ ' feeds/helloworld/luci-app-ssr-plus/root/etc/ssrplus/white.list
 sed -i '$a\cn.bing.com' feeds/helloworld/luci-app-ssr-plus/root/etc/ssrplus/white.list
 sed -i '$a\bing.com' feeds/helloworld/luci-app-ssr-plus/root/etc/ssrplus/white.list
+sed -i "s/回国/回国\/订阅\/电报\/重置/g" feeds/helloworld/luci-app-ssr-plus/root/etc/init.d/shadowsocksr
 
 # Fix luci-app-unblockneteasemusic
 wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-unblockneteasemusic/core/app.js
