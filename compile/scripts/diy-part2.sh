@@ -15,6 +15,9 @@ sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generat
 # wget -P target/linux/rockchip/patches-5.15 https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/patchs/18.06/target/linux/rockchip/patches-5.15/090-v6.3-net-phy-motorcomm-add-LED-configuration-for-yt8521-yt8531.patch
 # wget -P target/linux/rockchip/patches-6.1 https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/patchs/18.06/target/linux/rockchip/patches-6.1/090-v6.3-net-phy-motorcomm-add-LED-configuration-for-yt8521-yt8531.patch
 
+# FIX SUNXI SD ERROR
+rm -rf package/boot/uboot-sunxi/patches/261-sunxi-add-popstick-defconfig.patch
+
 # DIY Information
 sed -i 's/os.date()/os.date("%Y-%m-%d %a %H:%M:%S")/g' package/lean/autocore/files/arm/index.htm
 sed -i 's/os.date()/os.date("%Y-%m-%d %a %H:%M:%S")/g' package/lean/autocore/files/x86/index.htm
