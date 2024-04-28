@@ -73,6 +73,12 @@ sed -i "/官网/a\	list filter_discard_list '电报'" feeds/passwall/luci-app-pa
 sed -i "/官网/a\	list filter_discard_list '订阅'" feeds/passwall/luci-app-passwall/root/usr/share/passwall/0_default_config
 sed -i "/官网/a\	list filter_discard_list '回国'" feeds/passwall/luci-app-passwall/root/usr/share/passwall/0_default_config
 sed -i "/官网/a\	list filter_discard_list '防失联地址'" feeds/passwall/luci-app-passwall/root/usr/share/passwall/0_default_config
+sed -i "/IPOnDemand/a\	option port '1081'" feeds/passwall/luci-app-passwall/root/usr/share/passwall/0_default_config
+sed -i "/IPOnDemand/a\	option address '127.0.0.1'" feeds/passwall/luci-app-passwall/root/usr/share/passwall/0_default_config
+sed -i "/IPOnDemand/a\	option type 'Socks'" feeds/passwall/luci-app-passwall/root/usr/share/passwall/0_default_config
+sed -i "/IPOnDemand/a\	option remarks '自动切换'" feeds/passwall/luci-app-passwall/root/usr/share/passwall/0_default_config
+sed -i "/IPOnDemand/a\config nodes 'myshunt2'" feeds/passwall/luci-app-passwall/root/usr/share/passwall/0_default_config
+sed -i "/IPOnDemand/a\ " feeds/passwall/luci-app-passwall/root/usr/share/passwall/0_default_config
 # wget -P files/usr/bin https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-passwall/core/trojan-go
 
 # Fix luci-app-passwall2
