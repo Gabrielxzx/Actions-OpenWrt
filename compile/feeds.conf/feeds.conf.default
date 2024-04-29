@@ -3,7 +3,7 @@ src-git luci https://github.com/coolsnowwolf/luci
 src-git routing https://github.com/coolsnowwolf/routing
 src-git telephony https://git.openwrt.org/feed/telephony.git
 
-src-git helloworld https://github.com/fw876/helloworld.git;main
+src-git helloworld https://github.com/fw876/helloworld.git
 src-git passwall https://github.com/xiaorouji/openwrt-passwall.git
 src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git
 
