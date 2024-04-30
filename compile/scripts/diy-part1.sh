@@ -29,9 +29,12 @@ rm -rf package/lean/luci-theme-argon
 # git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
 
 # 修改Passwall和SSRPLUS
-rm -rf feeds/small/luci-app-passwall
 rm -rf feeds/small/luci-app-ssr-plus
+rm -rf feeds/small/luci-app-passwall
 rm -rf feeds/small/luci-app-passwall2
+rm -rf feeds/helloworld/chinadns-ng
+rm -rf feeds/helloworld/xray-core
+rm -rf feeds/helloworld/hysteria
 # git clone -b main https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
 
 # 修改luci-app-adguardhome
