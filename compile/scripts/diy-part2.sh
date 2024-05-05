@@ -97,6 +97,7 @@ wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.c
 wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-unblockneteasemusic/core/ca.crt
 wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-unblockneteasemusic/core/server.crt
 wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-unblockneteasemusic/core/server.key
+wget -P files/usr/bin https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
 
 # Fix others
 wget -P files/usr/share/jd-dailybonus https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/others/JD_DailyBonus.js
