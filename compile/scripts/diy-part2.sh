@@ -92,11 +92,11 @@ sed -i '$a\bing.com' feeds/helloworld/luci-app-ssr-plus/root/etc/ssrplus/white.l
 sed -i "s/回国/回国\/订阅\/电报\/重置/g" feeds/helloworld/luci-app-ssr-plus/root/etc/init.d/shadowsocksr
 
 # Fix luci-app-unblockneteasemusic
-wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-unblockneteasemusic/core/app.js
-wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-unblockneteasemusic/core/bridge.js
-wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-unblockneteasemusic/core/ca.crt
-wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-unblockneteasemusic/core/server.crt
-wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-unblockneteasemusic/core/server.key
+wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/UnblockNeteaseMusic/server/enhanced/app.js
+wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/UnblockNeteaseMusic/server/enhanced/bridge.js
+wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/UnblockNeteaseMusic/server/enhanced/ca.crt
+wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/UnblockNeteaseMusic/server/enhanced/server.crt
+wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/UnblockNeteaseMusic/server/enhanced/server.key
 wget -P files/usr/bin https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
 
 # Fix others
