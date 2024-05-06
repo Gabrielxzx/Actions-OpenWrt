@@ -9,7 +9,7 @@ on:
         required: false
         default: 'false'
   schedule:
-    - cron: 0 23 * * *
+    - cron: 0 0 * * *
 
 jobs:
   Clean_Repositories:
@@ -42,21 +42,21 @@ jobs:
             retain_days: 1
             keep_minimum_runs: 4
 
-      - name: Delete RockChip RK3328 workflow
+      - name: Delete RockChip Armv8 workflow
         uses: Mattraks/delete-workflow-runs@v2
         with:
             token: ${{ github.token }}
             repository: ${{ github.repository }}
-            delete_workflow_pattern: Build RockChip RK3328 OpenWrt
+            delete_workflow_pattern: Build RockChip Armv8 OpenWrt
             retain_days: 1
             keep_minimum_runs: 4
-
-      - name: Delete RockChip RK35XX workflow
+            
+      - name: Delete Amlogic Mesongx workflow
         uses: Mattraks/delete-workflow-runs@v2
         with:
             token: ${{ github.token }}
             repository: ${{ github.repository }}
-            delete_workflow_pattern: Build RockChip RK35XX OpenWrt
+            delete_workflow_pattern: Build Amlogic Mesongx OpenWrt
             retain_days: 1
             keep_minimum_runs: 4
 
