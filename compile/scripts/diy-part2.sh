@@ -92,8 +92,8 @@ sed -i '$a\bing.com' feeds/helloworld/luci-app-ssr-plus/root/etc/ssrplus/white.l
 sed -i "s/回国/回国\/订阅\/电报\/重置/g" feeds/helloworld/luci-app-ssr-plus/root/etc/init.d/shadowsocksr
 
 # Fix luci-app-unblockneteasemusic
-wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/UnblockNeteaseMusic/server/enhanced/app.js
-wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/UnblockNeteaseMusic/server/enhanced/bridge.js
+wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/UnblockNeteaseMusic/server/enhanced/precompiled/app.js
+wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/UnblockNeteaseMusic/server/enhanced/precompiled/bridge.js
 wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/UnblockNeteaseMusic/server/enhanced/ca.crt
 wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/UnblockNeteaseMusic/server/enhanced/server.crt
 wget -P files/usr/share/unblockneteasemusic/core https://raw.githubusercontent.com/UnblockNeteaseMusic/server/enhanced/server.key
