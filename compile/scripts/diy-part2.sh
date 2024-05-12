@@ -45,15 +45,17 @@ wget -P files/etc/config https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx
 # Add adguardhome rules
 wget -P files/etc/AdGuardHome/data/filters/ https://anti-ad.net/easylist.txt
 rm -rf files/etc/AdGuardHome/data/filters/easylist.txt
-wget -O files/etc/AdGuardHome/data/filters/1.txt https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
-wget -O files/etc/AdGuardHome/data/filters/2.txt https://cdn.jsdelivr.net/gh/banbendalao/ADgk@master/ADgk.txt
-wget -O files/etc/AdGuardHome/data/filters/3.txt https://anti-ad.net/easylist.txt
-wget -O files/etc/AdGuardHome/data/filters/4.txt https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad.txt
-wget -O files/etc/AdGuardHome/data/filters/5.txt https://easylist-downloads.adblockplus.org/easyprivacy.txt
-wget -O files/etc/AdGuardHome/data/filters/6.txt https://easylist-downloads.adblockplus.org/easylistchina+easylist.txt
-wget -O files/etc/AdGuardHome/data/filters/7.txt https://adguardteam.github.io/HostlistsRegistry/assets/filter_29.txt
-wget -O files/etc/AdGuardHome/data/filters/8.txt https://github.com/Gabrielxzx/Gabrielxzx-luci/releases/download/Stable_Files/miTVhosts
-wget -O files/etc/AdGuardHome/data/filters/9.txt https://github.com/Gabrielxzx/Gabrielxzx-luci/releases/download/Stable_Files/allow-domains-list.txt
+wget -O files/etc/AdGuardHome/data/filters/101.txt https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adguardhome/rules/Black-List.txt
+wget -O files/etc/AdGuardHome/data/filters/102.txt https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
+wget -O files/etc/AdGuardHome/data/filters/103.txt https://cdn.jsdelivr.net/gh/banbendalao/ADgk@master/ADgk.txt
+wget -O files/etc/AdGuardHome/data/filters/104.txt https://anti-ad.net/easylist.txt
+wget -O files/etc/AdGuardHome/data/filters/105.txt https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad.txt
+wget -O files/etc/AdGuardHome/data/filters/106.txt https://easylist-downloads.adblockplus.org/easyprivacy.txt
+wget -O files/etc/AdGuardHome/data/filters/107.txt https://easylist-downloads.adblockplus.org/easylistchina+easylist.txt
+wget -O files/etc/AdGuardHome/data/filters/108.txt https://adguardteam.github.io/HostlistsRegistry/assets/filter_29.txt
+wget -O files/etc/AdGuardHome/data/filters/201.txt https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adguardhome/rules/White-List.txt
+wget -O files/etc/AdGuardHome/data/filters/202.txt https://github.com/Gabrielxzx/Gabrielxzx-luci/releases/download/Stable_Files/allow-domains-list.txt
+wget -O files/etc/AdGuardHome/data/filters/203.txt https://raw.githubusercontent.com/privacy-protection-tools/dead-horse/master/anti-ad-white-list.txt
 
 # Fix luci-app-openclash
 wget -P files/etc/openclash/core https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-openclash/core/clash
