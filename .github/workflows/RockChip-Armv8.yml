@@ -27,8 +27,11 @@ env:
   REPO_BRANCH: master
   FEEDS_CONF: compile/feeds.conf/feeds.conf.default
   CONFIG_FILE: compile/config/RockChip-Armv8.config
+  EXTRA_CONFIG: compile/config/Extra.config
   DIY_P1_SH: compile/scripts/diy-part1.sh
   DIY_P2_SH: compile/scripts/diy-part2.sh
+  FIRMWARE_TAG: Rockchip
+  DEVICE_KERNEL: arm64
   DEPENDS_URL: https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/openwrt-list/depends-ubuntu-2004-lede
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
@@ -45,15 +48,15 @@ jobs:
     - name: Check server performance
       run: |
         echo "警告⚠"
-        echo "若分配的服务器性能不足，务必及时取消，重新运行！"
-        echo "已知编译成功CPU型号：7763,8370C,8272CL"
-        echo "已知性能不足CPU型号：8171M,E5-2673"
-        echo -e "-------------- ------------CPU信息------------------------------------------\n"
-        echo "CPU物理数量:$(cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l)"
-        echo -e "CPU核心及版本信息：$(cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c) \n"
-        echo "-------------------------------内存信息-------------------------------------------"
-        echo "已安装内存详细信息："
-        sudo lshw -short -C memory | grep GiB
+        echo "分配的服务器性能有限，若选择的插件过多，务必注意CPU性能！"
+        echo -e "已知CPU型号(降序): 7763，8370C，8272CL，8171M，E5-2673\n"
+        echo "--------------------------CPU信息--------------------------"
+        echo "CPU物理数量: $(cat /proc/cpuinfo | grep "physical id" | sort | uniq | wc -l)"
+        echo "CPU核心数量: $(nproc)"
+        echo -e "CPU型号信息:$(cat /proc/cpuinfo | grep -m1 name | awk -F: '{print $2}')\n"
+        echo "--------------------------内存信息--------------------------"
+        echo "已安装内存详细信息:"
+        echo -e "$(sudo lshw -short -C memory | grep GiB)\n"
 
     - name: Before freeing up disk space
       run: |
@@ -119,7 +122,7 @@ jobs:
       working-directory: ./
       run: |
         df -hT $PWD
-        git clone --depth=1 $REPO_URL -b $REPO_BRANCH openwrt
+        git clone $REPO_URL -b $REPO_BRANCH openwrt
         df -hT $PWD
 
     - name: Load custom feeds
@@ -139,6 +142,7 @@ jobs:
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        [ -e $EXTRA_CONFIG ] && cat $EXTRA_CONFIG >> openwrt/.config
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
