@@ -31,6 +31,7 @@ sed -i "/uclient/a\uclient-fetch --no-check-certificate -O - 'https:\/\/anti-ad.
 sed -i "/dnsmasq/a\\#uclient-fetch --no-check-certificate -O - 'https:\/\/neodev.team\/lite_dnsmasq.conf' \> \/usr\/share\/adbyby\/rules\/data\/lite_dnsmasq.conf" feeds/luci/applications/luci-app-adbyby-plus/root/usr/share/adbyby/adblock.sh
 sed -i "/neodev/a\\/usr\/share\/adbyby\/diyruleupdate.sh" feeds/luci/applications/luci-app-adbyby-plus/root/usr/share/adbyby/adblock.sh
 sed -i "/diyruleupdate/a\ " feeds/luci/applications/luci-app-adbyby-plus/root/usr/share/adbyby/adblock.sh
+sed -i "/update/a\	list subscribe_url 'https:\/\/anti-ad.net\/anti-ad-for-dnsmasq.conf'" feeds/luci/applications/luci-app-adbyby-plus/root/etc/config/adbyby
 wget -P files/usr/share/adbyby https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adbyby-plus/diyruleupdate.sh
 # Add adbyby-plus rules
 wget -P files/usr/share/adbyby https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adbyby-plus/dnsmasq.adblock
