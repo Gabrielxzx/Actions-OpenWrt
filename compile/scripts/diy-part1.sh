@@ -14,7 +14,7 @@ git clone --depth 1 https://github.com/Gabrielxzx/Gabrielxzx-luci.git package/Ga
 
 #添加1806版本 luci-app-unblockneteasemusic
 rm -rf feeds/kenzok8/luci-app-unblockneteasemusic
-git clone -b master https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
+git clone -b master https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/diy/luci-app-unblockneteasemusic
 
 # 修改主题
 rm -rf package/lean/luci-theme-argon
@@ -37,12 +37,19 @@ rm -rf feeds/luci/applications/luci-app-aliyundrive-webdav
 rm -rf feeds/packages/multimedia/aliyundrive-webdav
 
 # 添加luci-app-go-aliyundrive-webdav(jerrykuku库)
-git clone https://github.com/jerrykuku/luci-app-go-aliyundrive-webdav.git package/luci-app-go-aliyundrive-webdav
-git clone https://github.com/jerrykuku/go-aliyundrive-webdav.git package/go-aliyundrive-webdav
+git clone https://github.com/jerrykuku/luci-app-go-aliyundrive-webdav.git package/diy/luci-app-go-aliyundrive-webdav
+git clone https://github.com/jerrykuku/go-aliyundrive-webdav.git package/diy/go-aliyundrive-webdav
 
-# 修改SmartDNS
-# rm -rf feeds/kenzok8/luci-app-smartdns
-# git clone -b lede https://github.com/pymumu/luci-app-smartdns.git feeds/kenzok8/luci-app-smartdns
+# 修改luci-app-openclash
+rm -rf package/Gabrielxzx/packages/applications/luci-app-openclash
+# rm -rf feeds/kenzok8/luci-app-openclash
+# git clone https://github.com/vernesong/OpenClash.git package/diy/luci-app-openclash
+
+# 修改DNS
+rm -rf feeds/luci/applications/luci-app-smartdns
+rm -rf feeds/luci/applications/luci-app-mosdns
+# git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/diy/luci-app-smartdns
+# git clone https://github.com/sbwml/luci-app-mosdns.git package/diy/luci-app-mosdns
 
 #安装feeds
 ./scripts/feeds install -a
