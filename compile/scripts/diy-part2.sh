@@ -110,10 +110,13 @@ wget -P files/www/luci-static/vssr https://raw.githubusercontent.com/Gabrielxzx/
 wget -P files/usr/myhosts https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/others/miTVhosts
 
 # add root files
-wget -P files/root https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/root/pandownload-fake-server-1-1.ipk
-wget -P files/root https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/root/pd-install
 wget -P files/root https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/root/resetssrp
 
+# add theme files
+wget -P files/www/luci-static/argone/background https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/background_picture/argon_bg/argon_bg1.jpg
+wget -P files/www/luci-static/argone/background https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/background_picture/argon_bg/argon_bg2.jpg
+wget -P files/www/luci-static/argon/background https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/background_picture/argon_bg/argon_bg1.jpg
+wget -P files/www/luci-static/argon/background https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/background_picture/argon_bg/argon_bg2.jpg
 
 # 广告屏蔽大师增加默认规则 anti-ad
 wget -P files/usr/share/adbyby/rules/data https://anti-ad.net/anti-ad-for-dnsmasq.conf
