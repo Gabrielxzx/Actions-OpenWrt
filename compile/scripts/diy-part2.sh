@@ -21,6 +21,7 @@ sed -i 's/os.date()/os.date("%Y-%m-%d %a %H:%M:%S")/g' package/lean/autocore/fil
 sed -i "s/OpenWrt /OpenWrt $(TZ=UTC-8 date "+%Y.%m.%d") \//g" package/lean/default-settings/files/zzz-default-settings
 sed -i "/config/a\sed -i 's\/openwrt.org\/baidu.com\/g' \/etc\/config\/luci" package/lean/default-settings/files/zzz-default-settings
 sed -i "/zonename/a\uci set system.@system[0].hostname=HarmonyOS" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/IMG_PREFIX:=\$(VERSION_DIST_SANITIZED)/IMG_PREFIX:=\$(VERSION_DIST_SANITIZED)-\$(shell TZ=UTC-8 date +"%Y.%m.%d")/g" include/image.mk
 wget -P files/etc/init.d https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/diy_init.d/diy_init_script
 
 # add files
@@ -34,18 +35,15 @@ sed -i "/neodev/a\\/usr\/share\/adbyby\/diyruleupdate.sh" feeds/luci/application
 sed -i "/diyruleupdate/a\ " feeds/luci/applications/luci-app-adbyby-plus/root/usr/share/adbyby/adblock.sh
 wget -P files/usr/share/adbyby https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adbyby-plus/diyruleupdate.sh
 # Add adbyby-plus rules
-wget -P files/usr/share/adbyby https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adbyby-plus/dnsmasq.adblock
 wget -P files/usr/share/adbyby/data https://cdn.jsdelivr.net/gh/kongfl888/ad-rules/lazy.txt
 wget -P files/usr/share/adbyby/data https://cdn.jsdelivr.net/gh/kongfl888/ad-rules/video.txt
 
 # Fix luci-app-adguardhome
 wget -P files/etc/init.d https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adguardhome/adguardhome
 wget -P files/etc/init.d https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adguardhome/init.d/AdGuardHome
-wget -P files/usr/bin https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adguardhome/core/AdGuardHome
 wget -P files/etc/config https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adguardhome/AdGuardHome.yaml
 # Add adguardhome rules
-wget -P files/etc/AdGuardHome/data/filters/ https://anti-ad.net/easylist.txt
-rm -rf files/etc/AdGuardHome/data/filters/easylist.txt
+mkdir -p files/etc/AdGuardHome/data/filters
 wget -O files/etc/AdGuardHome/data/filters/101.txt https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adguardhome/rules/Black-List.txt
 wget -O files/etc/AdGuardHome/data/filters/102.txt https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 wget -O files/etc/AdGuardHome/data/filters/103.txt https://cdn.jsdelivr.net/gh/banbendalao/ADgk@master/ADgk.txt
@@ -57,11 +55,6 @@ wget -O files/etc/AdGuardHome/data/filters/108.txt https://adguardteam.github.io
 wget -O files/etc/AdGuardHome/data/filters/201.txt https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adguardhome/rules/White-List.txt
 wget -O files/etc/AdGuardHome/data/filters/202.txt https://github.com/Gabrielxzx/Gabrielxzx-luci/releases/download/Stable_Files/allow-domains-list.txt
 wget -O files/etc/AdGuardHome/data/filters/203.txt https://raw.githubusercontent.com/privacy-protection-tools/dead-horse/master/anti-ad-white-list.txt
-
-# Fix luci-app-openclash
-wget -P files/etc/openclash/core https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-openclash/core/clash
-wget -P files/etc/openclash/core https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-openclash/core/clash_meta
-wget -P files/etc/openclash/core https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-openclash/core/clash_tun
 
 # Fix luci-app-passwall
 sed -i '$a\ ' feeds/passwall/luci-app-passwall/root/usr/share/passwall/rules/direct_host
@@ -111,6 +104,7 @@ wget -P files/usr/myhosts https://raw.githubusercontent.com/Gabrielxzx/Gabrielxz
 
 # add root files
 wget -P files/root https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/root/resetssrp
+wget -P files/root https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/root/update-adguard-core
 
 # add theme files
 wget -P files/www/luci-static/argone/background https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/background_picture/argon_bg/argon_bg1.jpg
