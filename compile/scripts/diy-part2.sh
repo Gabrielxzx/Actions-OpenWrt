@@ -106,6 +106,7 @@ wget -P files/usr/myhosts https://raw.githubusercontent.com/Gabrielxzx/Gabrielxz
 wget -P files/root https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/root/resetopenwrt
 wget -P files/root https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/root/resetssrp
 wget -P files/root https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/root/update-adguard-core
+wget -P files/root https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/root/rk3568-maskrom
 
 # add theme files
 wget -P files/www/luci-static/argone/background https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/background_picture/argon_bg/argon_bg1.jpg
