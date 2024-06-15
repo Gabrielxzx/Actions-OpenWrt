@@ -72,7 +72,8 @@ sed -i "/IPOnDemand/a\	option type 'Socks'" feeds/passwall/luci-app-passwall/roo
 sed -i "/IPOnDemand/a\	option remarks '自动切换'" feeds/passwall/luci-app-passwall/root/usr/share/passwall/0_default_config
 sed -i "/IPOnDemand/a\config nodes 'myshunt2'" feeds/passwall/luci-app-passwall/root/usr/share/passwall/0_default_config
 sed -i "/IPOnDemand/a\ " feeds/passwall/luci-app-passwall/root/usr/share/passwall/0_default_config
-# wget -P files/usr/bin https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-passwall/core/trojan-go
+wget -P files/usr/share/v2ray https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat
+wget -P files/usr/share/v2ray https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
 
 # Fix luci-app-passwall2
 sed -i "/官网/a\	list filter_discard_list '重置'" feeds/passwall2/luci-app-passwall2/root/usr/share/passwall2/0_default_config
