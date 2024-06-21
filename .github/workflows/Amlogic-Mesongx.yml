@@ -30,9 +30,8 @@ env:
   EXTRA_CONFIG: compile/config/Extra.config
   DIY_P1_SH: compile/scripts/diy-part1.sh
   DIY_P2_SH: compile/scripts/diy-part2.sh
-  Preset_P1_SH: compile/scripts/preset-adguard-core.sh
-  Preset_P2_SH: compile/scripts/preset-clash-core.sh
-  Preset_P3_SH: compile/scripts/preset-adbyby-rules.sh
+  Preset_P1_SH: compile/scripts/preset-part1.sh
+  Preset_P2_SH: compile/scripts/preset-part2.sh
   DEVICE_KERNEL: arm64
   FIRMWARE_TAG: Amlogic_Arm64
   DEPENDS_URL: https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/openwrt-list/depends-ubuntu-2004-lede
@@ -149,8 +148,7 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
         $GITHUB_WORKSPACE/$Preset_P1_SH $DEVICE_KERNEL
-        $GITHUB_WORKSPACE/$Preset_P2_SH $DEVICE_KERNEL
-        $GITHUB_WORKSPACE/$Preset_P3_SH
+        $GITHUB_WORKSPACE/$Preset_P2_SH
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
