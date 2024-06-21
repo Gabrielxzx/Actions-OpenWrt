@@ -1,5 +1,9 @@
 # Pi 固件自动编译
 
+## 固件介绍
+
+- 本固件用于个人租房使用，不适合所有人
+
 ## 基本信息
 
 - 默认地址：192.168.2.1(主路由) / 192.168.2.10(旁路由) 
@@ -11,8 +15,8 @@
 
 ## 下载链接
 
-- [Releases](https://github.com/Gabrielxzx/Actions-OpenWrt/releases)
-- [蓝奏云](https://wwi.lanzoui.com/b0ck6gm1i)
+- 主路由：[Releases](https://github.com/Gabrielxzx/Actions-OpenWrt/releases)
+- 旁路由：[Releases](https://github.com/Gabrielxzx/Actions-OpenWrt-SideRoute/releases)
 
 ## 备注
 
