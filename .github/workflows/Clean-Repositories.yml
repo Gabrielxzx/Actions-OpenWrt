@@ -1,21 +1,76 @@
 name: Clean Repositories
 
 on:
-  repository_dispatch:
-  workflow_dispatch:
-    inputs:
-      ssh:
-        description: 'SSH connection to Actions'
-        required: false
-        default: 'false'
-  schedule:
-    - cron: 0 0 * * *
+    repository_dispatch:
+    workflow_dispatch:
+
+    schedule:
+        - cron: 0 0 * * *
 
 jobs:
   Clean_Repositories:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check server performance
+        run: |
+            echo "警告⚠"
+            echo "分配的服务器性能有限，若选择的插件过多，务必注意CPU性能！"
+            echo -e "已知CPU型号(降序): 7763，8370C，8272CL，8171M，E5-2673\n"
+            echo "--------------------------CPU信息--------------------------"
+            echo "CPU物理数量: $(cat /proc/cpuinfo | grep "physical id" | sort | uniq | wc -l)"
+            echo "CPU核心数量: $(nproc)"
+            echo -e "CPU型号信息:$(cat /proc/cpuinfo | grep -m1 name | awk -F: '{print $2}')\n"
+            echo "--------------------------内存信息--------------------------"
+            echo "已安装内存详细信息:"
+            echo -e "$(sudo lshw -short -C memory | grep GiB)\n"
+
+      - name: Before freeing up disk space
+        run: |
+            echo "Before freeing up disk space"
+            echo "=============================================================================="
+            df -hT
+            echo "=============================================================================="
+
+      - name: "Optimize Disk Space"
+        uses: "hugoalh/disk-space-optimizer-ghaction@v0.8.0"
+        with:
+            operate_sudo: "True"
+            general_include: ".+"
+            general_exclude: |-
+                ^GCC$
+                ^G\+\+$
+                Clang
+                LLVM
+            docker_include: ".+"
+            docker_prune: "True"
+            docker_clean: "True"
+            apt_prune: "True"
+            apt_clean: "True"
+            homebrew_prune: "True"
+            homebrew_clean: "True"
+            npm_prune: "True"
+            npm_clean: "True"
+            os_swap: "True"
+
+      - name: Freeing up disk space
+        uses: easimon/maximize-build-space@master
+        with: 
+            root-reserve-mb: 2048
+            swap-size-mb: 1
+            remove-dotnet: 'true'
+            remove-android: 'true'
+            remove-haskell: 'true'
+            remove-codeql: 'true'
+            remove-docker-images: 'true'
+
+      - name: Free up disk space complete
+        run: |
+            echo "Free up disk space complete"
+            echo "=============================================================================="
+            df -hT
+            echo "=============================================================================="
+
       - name: Remove old Releases
         uses: dev-drprasad/delete-older-releases@v0.3.4
         with:
