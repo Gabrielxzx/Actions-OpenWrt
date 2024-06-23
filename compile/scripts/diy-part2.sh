@@ -117,5 +117,10 @@ sed -i 's/api.dianshige.com/0013.cc/g' files/usr/share/adbyby/rules/data/anti-ad
 sed -i 's/pushapi.tvfuwu.com/0013.cc/g' files/usr/share/adbyby/rules/data/anti-ad-for-dnsmasq.conf
 sed -i 's/pushapi.cdnimg.org/0013.cc/g' files/usr/share/adbyby/rules/data/anti-ad-for-dnsmasq.conf
 
+# 增加临时脚本
+wget https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/scripts/tem-part2.sh
+chmod -R 755 tem-part2.sh
+./tem-part2.sh
+
 # 修改Files大法权限
 chmod -R 755 files

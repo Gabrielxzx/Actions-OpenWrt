@@ -115,6 +115,15 @@ jobs:
             retain_days: 1
             keep_minimum_runs: 4
 
+      - name: Delete Armv8 Flippy workflow
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+            token: ${{ github.token }}
+            repository: ${{ github.repository }}
+            delete_workflow_pattern: Build Armv8 Flippy OpenWrt
+            retain_days: 1
+            keep_minimum_runs: 4
+
       - name: Delete workflow runs
 #        uses: GitRML/delete-workflow-runs@main
         uses: Mattraks/delete-workflow-runs@v2

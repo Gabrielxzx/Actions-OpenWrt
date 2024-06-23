@@ -60,13 +60,6 @@ jobs:
             echo "已安装内存详细信息:"
             echo -e "$(sudo lshw -short -C memory | grep GiB)\n"
 
-      - name: Before freeing up disk space
-        run: |
-            echo "Before freeing up disk space"
-            echo "=============================================================================="
-            df -hT
-            echo "=============================================================================="
-
       - name: Checkout
         uses: actions/checkout@main
 
@@ -84,6 +77,13 @@ jobs:
             sudo timedatectl set-timezone "$TZ"
             sudo chown $USER:$GROUPS $GITHUB_WORKSPACE
             echo "status=success" >> ${GITHUB_OUTPUT}
+
+      - name: Before freeing up disk space
+        run: |
+            echo "Before freeing up disk space"
+            echo "=============================================================================="
+            df -hT
+            echo "=============================================================================="
 
       - name: Create simulated physical disk
         run: |
