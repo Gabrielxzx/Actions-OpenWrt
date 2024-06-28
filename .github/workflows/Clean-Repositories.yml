@@ -79,21 +79,30 @@ jobs:
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Delete Sunxi CortexA7 workflow
-        uses: Mattraks/delete-workflow-runs@v2
-        with:
-            token: ${{ github.token }}
-            repository: ${{ github.repository }}
-            delete_workflow_pattern: Build Sunxi CortexA7 OpenWrt
-            retain_days: 1
-            keep_minimum_runs: 4
-
       - name: Delete Sunxi CortexA53 workflow
         uses: Mattraks/delete-workflow-runs@v2
         with:
             token: ${{ github.token }}
             repository: ${{ github.repository }}
             delete_workflow_pattern: Build Sunxi CortexA53 OpenWrt
+            retain_days: 1
+            keep_minimum_runs: 4
+
+      - name: Delete Amlogic Mesongx workflow
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+            token: ${{ github.token }}
+            repository: ${{ github.repository }}
+            delete_workflow_pattern: Build Amlogic Mesongx OpenWrt
+            retain_days: 1
+            keep_minimum_runs: 4
+
+      - name: Delete Sunxi CortexA7 workflow
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+            token: ${{ github.token }}
+            repository: ${{ github.repository }}
+            delete_workflow_pattern: Build Sunxi CortexA7 OpenWrt
             retain_days: 1
             keep_minimum_runs: 4
 
@@ -105,22 +114,13 @@ jobs:
             delete_workflow_pattern: Build RockChip Armv8 OpenWrt
             retain_days: 1
             keep_minimum_runs: 4
-            
-      - name: Delete Amlogic Mesongx workflow
-        uses: Mattraks/delete-workflow-runs@v2
-        with:
-            token: ${{ github.token }}
-            repository: ${{ github.repository }}
-            delete_workflow_pattern: Build Amlogic Mesongx OpenWrt
-            retain_days: 1
-            keep_minimum_runs: 4
 
-      - name: Delete Armv8 Flippy workflow
+      - name: Delete Armvirt 64 workflow
         uses: Mattraks/delete-workflow-runs@v2
         with:
             token: ${{ github.token }}
             repository: ${{ github.repository }}
-            delete_workflow_pattern: Build Armv8 Flippy OpenWrt
+            delete_workflow_pattern: Build Armvirt 64 OpenWrt
             retain_days: 1
             keep_minimum_runs: 4
 
