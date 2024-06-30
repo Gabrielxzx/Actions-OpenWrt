@@ -202,11 +202,9 @@ jobs:
         id: tag
         if: steps.organize.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
         run: |
-            echo "release_tag=$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
+            echo "release_tag=$(date +"%Y.%m.%d-%H%M")_$FIRMWARE_TAG" >> $GITHUB_OUTPUT
             echo "release_date=$(date +"%Y.%m.%d")" >> $GITHUB_OUTPUT
             touch release.txt
-            [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
-            [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
             echo "status=success" >> $GITHUB_OUTPUT
 
       - name: Upload the compile OpenWrt to release

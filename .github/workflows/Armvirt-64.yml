@@ -192,22 +192,13 @@ jobs:
             echo "FIRMWARE=$PWD" >> $GITHUB_ENV
             echo "status=success" >> $GITHUB_OUTPUT
 
-      - name: Upload the compile OpenWrt to artifact
-        uses: actions/upload-artifact@main
-        if: steps.organize.outputs.status == 'success' && env.UPLOAD_ARTIFACT == 'true' && !cancelled()
-        with:
-            name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-            path: ${{ env.FIRMWARE }}
-
       - name: Generate release tag
         id: tag
         if: steps.organize.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
         run: |
-            echo "release_tag=Armvirt_$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
+            echo "release_tag=$(date +"%Y.%m.%d-%H%M")_$FIRMWARE_TAG" >> $GITHUB_OUTPUT
             echo "release_date=$(date +"%Y.%m.%d")" >> $GITHUB_OUTPUT
             touch release.txt
-            [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
-            [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
             echo "status=success" >> $GITHUB_OUTPUT
 
       - name: Clean server space
@@ -221,24 +212,9 @@ jobs:
             cp -f bin/targets/*/*/config.buildinfo output/config.buildinfo
             rm -rf $(ls . | grep -v "^output$" | xargs) 2>/dev/null
 
-            # Generate sha256sum file
-            cd output/
-            for file in *; do [[ ! -d "${file}" ]] && sha256sum "${file}" >"${file}.sha"; done
-
             # Set output information
             df -hT ${PWD}
             echo "status=success" >> $GITHUB_OUTPUT
-
-      - name: Upload the compile OpenWrt to release
-        uses: softprops/action-gh-release@v2.0.4
-        if: steps.tag.outputs.status == 'success' && steps.compile.outputs.status == 'success' && !cancelled()
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-            name: ${{ steps.tag.outputs.release_date }} ${{ env.FIRMWARE_TAG }} openwrt
-            tag_name: ${{ steps.tag.outputs.release_tag }}
-            body_path: release.txt
-            files: openwrt/output/*
 
       - name: Packaging OpenWrt
         id: packaging
@@ -246,12 +222,24 @@ jobs:
         uses: ophub/amlogic-s9xxx-openwrt@main
         with:
             openwrt_path: openwrt/output/*rootfs.tar.gz
-            openwrt_board: h28k
+            openwrt_board: e20c_h28k_r66s_r68s
             openwrt_kernel: 6.1.y_6.6.y
             auto_kernel: true
             kernel_repo: ophub/kernel
             kernel_usage: stable
             builder_name: gabrielx
+
+      - name: Generate sha256sum file
+        id: sha256sum
+        if: env.PACKAGED_STATUS == 'success' && !cancelled()
+        run: |
+            cp -f openwrt/output/*rootfs.tar.gz $PACKAGED_OUTPUTPATH/
+            cp -f openwrt/output/config.buildinfo $PACKAGED_OUTPUTPATH/config.buildinfo
+            cd $PACKAGED_OUTPUTPATH
+            rm -rf *img.gz.sha
+            for file in *; do [[ ! -d "${file}" ]] && sha256sum "${file}" >> "sha256sums"; done
+            df -hT ${PWD}
+            echo "status=success" >> $GITHUB_OUTPUT
 
       - name: Upload the packaged OpenWrt to artifact
         uses: actions/upload-artifact@main
