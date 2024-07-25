@@ -51,6 +51,10 @@ rm -rf feeds/luci/applications/luci-app-mosdns
 # git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/diy/luci-app-smartdns
 # git clone https://github.com/sbwml/luci-app-mosdns.git package/diy/luci-app-mosdns
 
+# 修改golang
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+
 # 增加临时脚本
 wget https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/scripts/tem-part1.sh
 chmod -R 755 tem-part1.sh
