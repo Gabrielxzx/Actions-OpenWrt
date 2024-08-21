@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build Armvirt 64 OpenWrt
+name: Build RockChip RK35XX OpenWrt
 
 on:
     repository_dispatch:
@@ -19,21 +19,21 @@ on:
                 required: false
                 default: 'false'
     schedule:
-        - cron: 30 18 * * *
+        - cron: 0 18 * * *
 
 
 env:
     REPO_URL: https://github.com/coolsnowwolf/lede
     REPO_BRANCH: master
     FEEDS_CONF: compile/feeds.conf/feeds.conf.default
-    CONFIG_FILE: compile/config/Armvirt-64.config
+    CONFIG_FILE: compile/config/RockChip-RK35XX.config
     EXTRA_CONFIG: compile/config/Extra.config
     DIY_P1_SH: compile/scripts/diy-part1.sh
     DIY_P2_SH: compile/scripts/diy-part2.sh
     Preset_P1_SH: compile/scripts/preset-part1.sh
     Preset_P2_SH: compile/scripts/preset-part2.sh
     DEVICE_KERNEL: arm64
-    FIRMWARE_TAG: Armvirt_64
+    FIRMWARE_TAG: Rockchip_RK35XX
     DEPENDS_URL: https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/openwrt-list/depends-ubuntu-2004-lede
     UPLOAD_BIN_DIR: false
     UPLOAD_ARTIFACT: true
@@ -115,7 +115,6 @@ jobs:
             df -hT $PWD
             git clone $REPO_URL -b $REPO_BRANCH openwrt
             ln -sf /builder/openwrt $GITHUB_WORKSPACE/openwrt
-            ln -sf /builder/openwrt /home/runner/work/_actions/ophub/amlogic-s9xxx-openwrt/main/openwrt
             df -hT $PWD
 
       - name: Load custom feeds
@@ -192,6 +191,13 @@ jobs:
             echo "FIRMWARE=$PWD" >> $GITHUB_ENV
             echo "status=success" >> $GITHUB_OUTPUT
 
+      - name: Upload the compile OpenWrt to artifact
+        uses: actions/upload-artifact@main
+        if: steps.organize.outputs.status == 'success' && env.UPLOAD_ARTIFACT == 'true' && !cancelled()
+        with:
+            name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+            path: ${{ env.FIRMWARE }}
+
       - name: Generate release tag
         id: tag
         if: steps.organize.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
@@ -201,61 +207,15 @@ jobs:
             touch release.txt
             echo "status=success" >> $GITHUB_OUTPUT
 
-      - name: Clean server space
-        id: clean
-        if: steps.compile.outputs.status == 'success' && !cancelled()
-        run: |
-            # Clean up server space
-            cd openwrt/
-            [[ -d "output" ]] || mkdir output
-            cp -f bin/targets/*/*/*rootfs.tar.gz output/
-            cp -f bin/targets/*/*/config.buildinfo output/config.buildinfo
-            rm -rf $(ls . | grep -v "^output$" | xargs) 2>/dev/null
-
-            # Set output information
-            df -hT ${PWD}
-            echo "status=success" >> $GITHUB_OUTPUT
-
-      - name: Packaging OpenWrt
-        id: packaging
-        if: steps.clean.outputs.status == 'success' && !cancelled()
-        uses: ophub/amlogic-s9xxx-openwrt@main
-        with:
-            openwrt_path: openwrt/output/*rootfs.tar.gz
-            openwrt_board: e20c_h28k_r66s_r68s
-            openwrt_kernel: 6.1.y_6.6.y
-            auto_kernel: true
-            kernel_repo: ophub/kernel
-            kernel_usage: stable
-            builder_name: gabrielx
-
-      - name: Generate sha256sum file
-        id: sha256sum
-        if: env.PACKAGED_STATUS == 'success' && !cancelled()
-        run: |
-            cp -f openwrt/output/*rootfs.tar.gz $PACKAGED_OUTPUTPATH/
-            cp -f openwrt/output/config.buildinfo $PACKAGED_OUTPUTPATH/config.buildinfo
-            cd $PACKAGED_OUTPUTPATH
-            rm -rf *img.gz.sha
-            for file in *; do [[ ! -d "${file}" ]] && sha256sum "${file}" >> "sha256sums"; done
-            df -hT ${PWD}
-            echo "status=success" >> $GITHUB_OUTPUT
-
-      - name: Upload the packaged OpenWrt to artifact
-        uses: actions/upload-artifact@main
-        if: env.PACKAGED_STATUS == 'success' && env.UPLOAD_ARTIFACT == 'true' && !cancelled()
-        with:
-            name: OpenWrt_Package${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-            path: ${{ env.PACKAGED_OUTPUTPATH }}
-
-      - name: Upload the packaged OpenWrt to release
+      - name: Upload the compile OpenWrt to release
         uses: softprops/action-gh-release@v2.0.4
-        if: steps.tag.outputs.status == 'success' && env.PACKAGED_STATUS == 'success' && !cancelled()
+        if: steps.tag.outputs.status == 'success' && !cancelled()
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
             name: ${{ steps.tag.outputs.release_date }} ${{ env.FIRMWARE_TAG }} openwrt
             tag_name: ${{ steps.tag.outputs.release_tag }}
             body_path: release.txt
-            files: ${{ env.PACKAGED_OUTPUTPATH }}/*
+            files: ${{ env.FIRMWARE }}/*
+    
 
