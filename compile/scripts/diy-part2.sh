@@ -53,7 +53,8 @@ wget -P files/usr/share/adbyby/data https://cdn.jsdelivr.net/gh/kongfl888/ad-rul
 # Fix luci-app-adguardhome
 wget -P files/etc/init.d https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adguardhome/adguardhome
 wget -P files/etc/init.d https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adguardhome/init.d/AdGuardHome
-wget -P files/etc/config https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adguardhome/AdGuardHome.yaml
+# wget -P files/etc/config https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adguardhome/AdGuardHome.yaml
+wget -P files/etc https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adguardhome/AdGuardHome.yaml
 # Add adguardhome rules
 mkdir -p files/etc/AdGuardHome/data/filters
 wget -O files/etc/AdGuardHome/data/filters/101.txt https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/files/luci-app-adguardhome/rules/Black-List.txt

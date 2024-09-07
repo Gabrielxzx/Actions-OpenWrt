@@ -30,7 +30,8 @@ rm -rf feeds/helloworld/xray-core
 rm -rf feeds/helloworld/hysteria
 
 # 修改luci-app-adguardhome
-rm -rf feeds/kenzok8/luci-app-adguardhome
+# rm -rf feeds/kenzok8/luci-app-adguardhome
+rm -rf package/Gabrielxzx/packages/applications/luci-app-adguardhome
 
 # 修改luci-app-aliyundrive-webdav
 rm -rf feeds/luci/applications/luci-app-aliyundrive-webdav
