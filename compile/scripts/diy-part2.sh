@@ -15,18 +15,6 @@ sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generat
 # wget -P target/linux/rockchip/patches-5.15 https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/patchs/18.06/target/linux/rockchip/patches-5.15/090-v6.3-net-phy-motorcomm-add-LED-configuration-for-yt8521-yt8531.patch
 # wget -P target/linux/rockchip/patches-6.1 https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/patchs/18.06/target/linux/rockchip/patches-6.1/090-v6.3-net-phy-motorcomm-add-LED-configuration-for-yt8521-yt8531.patch
 
-# Add Hlink H28K support
-sed -i "/TARGET_DEVICES += radxa_e20c/a\TARGET_DEVICES += hlink_h28k" target/linux/rockchip/image/rk35xx.mk
-sed -i "/TARGET_DEVICES += radxa_e20c/a\endef" target/linux/rockchip/image/rk35xx.mk
-sed -i "/TARGET_DEVICES += radxa_e20c/a\  DEVICE_PACKAGES := kmod-r8168 kmod-r8125 kmod-thermal" target/linux/rockchip/image/rk35xx.mk
-sed -i "/TARGET_DEVICES += radxa_e20c/a\  DEVICE_DTS := rk3528-h28k" target/linux/rockchip/image/rk35xx.mk
-sed -i "/TARGET_DEVICES += radxa_e20c/a\  SUPPORTED_DEVICES += hlink,h28k" target/linux/rockchip/image/rk35xx.mk
-sed -i "/TARGET_DEVICES += radxa_e20c/a\  DEVICE_MODEL := H28K" target/linux/rockchip/image/rk35xx.mk
-sed -i "/TARGET_DEVICES += radxa_e20c/a\  DEVICE_VENDOR := Hlink" target/linux/rockchip/image/rk35xx.mk
-sed -i "/TARGET_DEVICES += radxa_e20c/a\$(call Device/rk3528)" target/linux/rockchip/image/rk35xx.mk
-sed -i "/TARGET_DEVICES += radxa_e20c/a\define Device/hlink_h28k" target/linux/rockchip/image/rk35xx.mk
-sed -i "/TARGET_DEVICES += radxa_e20c/a\ " target/linux/rockchip/image/rk35xx.mk
-
 # DIY Information
 sed -i 's/os.date()/os.date("%Y-%m-%d %a %H:%M:%S")/g' package/lean/autocore/files/arm/index.htm
 sed -i 's/os.date()/os.date("%Y-%m-%d %a %H:%M:%S")/g' package/lean/autocore/files/x86/index.htm
