@@ -9,7 +9,7 @@
 #============================================================
 
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
 
 # Fix R2C Patch
 # wget -P target/linux/rockchip/patches-5.15 https://raw.githubusercontent.com/Gabrielxzx/Gabrielxzx-luci/master/patchs/18.06/target/linux/rockchip/patches-5.15/090-v6.3-net-phy-motorcomm-add-LED-configuration-for-yt8521-yt8531.patch
@@ -18,7 +18,7 @@ sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generat
 # DIY Information
 sed -i 's/os.date()/os.date("%Y-%m-%d %a %H:%M:%S")/g' package/lean/autocore/files/arm/index.htm
 sed -i 's/os.date()/os.date("%Y-%m-%d %a %H:%M:%S")/g' package/lean/autocore/files/x86/index.htm
-sed -i "s/OpenWrt /OpenWrt $(TZ=UTC-8 date "+%Y.%m.%d") \//g" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/LEDE /LEDE $(TZ=UTC-8 date "+%Y.%m.%d") \//g" package/lean/default-settings/files/zzz-default-settings
 sed -i "/config/a\sed -i 's\/openwrt.org\/baidu.com\/g' \/etc\/config\/luci" package/lean/default-settings/files/zzz-default-settings
 sed -i "/zonename/a\	set system.@system[0].hostname=HarmonyOS" package/lean/default-settings/files/zzz-default-settings
 sed -i "s/IMG_PREFIX:=\$(VERSION_DIST_SANITIZED)/IMG_PREFIX:=\$(VERSION_DIST_SANITIZED)-\$(shell TZ=UTC-8 date +"%Y.%m.%d")/g" include/image.mk
