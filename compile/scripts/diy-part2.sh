@@ -62,6 +62,10 @@ sed -i '$a\ ' feeds/passwall/luci-app-passwall/root/usr/share/passwall/rules/dir
 sed -i '$a\#DIY' feeds/passwall/luci-app-passwall/root/usr/share/passwall/rules/direct_host
 sed -i '$a\cn.bing.com' feeds/passwall/luci-app-passwall/root/usr/share/passwall/rules/direct_host
 sed -i '$a\bing.com' feeds/passwall/luci-app-passwall/root/usr/share/passwall/rules/direct_host
+sed -i '$a\ ' feeds/passwall/luci-app-passwall/root/usr/share/passwall/rules/proxy_host
+sed -i '$a\#DIY' feeds/passwall/luci-app-passwall/root/usr/share/passwall/rules/proxy_host
+sed -i '$a\hubgw.docker.com' feeds/passwall/luci-app-passwall/root/usr/share/passwall/rules/proxy_host
+sed -i '$a\docker.io' feeds/passwall/luci-app-passwall/root/usr/share/passwall/rules/proxy_host
 sed -i "/官网/a\	list filter_discard_list '重置'" feeds/passwall/luci-app-passwall/root/usr/share/passwall/0_default_config
 sed -i "/官网/a\	list filter_discard_list '电报'" feeds/passwall/luci-app-passwall/root/usr/share/passwall/0_default_config
 sed -i "/官网/a\	list filter_discard_list '订阅'" feeds/passwall/luci-app-passwall/root/usr/share/passwall/0_default_config
@@ -87,6 +91,9 @@ sed -i "/官网/a\	list filter_discard_list '防失联地址'" feeds/passwall2/l
 sed -i '$a\ ' feeds/helloworld/luci-app-ssr-plus/root/etc/ssrplus/white.list
 sed -i '$a\cn.bing.com' feeds/helloworld/luci-app-ssr-plus/root/etc/ssrplus/white.list
 sed -i '$a\bing.com' feeds/helloworld/luci-app-ssr-plus/root/etc/ssrplus/white.list
+test -s feeds/helloworld/luci-app-ssr-plus/root/etc/ssrplus/black.list && sed -i '$a\ ' feeds/helloworld/luci-app-ssr-plus/root/etc/ssrplus/black.list || echo ' ' >> feeds/helloworld/luci-app-ssr-plus/root/etc/ssrplus/black.list
+sed -i '$a\hubgw.docker.com' feeds/helloworld/luci-app-ssr-plus/root/etc/ssrplus/black.list
+sed -i '$a\docker.io' feeds/helloworld/luci-app-ssr-plus/root/etc/ssrplus/black.list
 sed -i "s/回国/回国\/订阅\/电报\/重置/g" feeds/helloworld/luci-app-ssr-plus/root/etc/init.d/shadowsocksr
 
 # Fix luci-app-unblockneteasemusic
